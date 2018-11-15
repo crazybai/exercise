@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset='utf8'>
+	<title></title>
+	<!-- 1 引入highCharts 图表js文件（源码） -->
+	<script src="highcharts.js"></script>
+</head>
+<body>
+	<!-- 2 容纳图表的元素 -->
+	<div id="container" style="width: 600px;height:400px;"></div>
+</body>
+</html>
+
+<!-- 在下面的js脚本中设置图表参数、创建图表 -->
+<script>
+	// 图表参数
+	var options={
+		// 图表类型参数
+		chart:{type:'column'},
+		// 图表主标题
+		title:{text:'我的第一个图表'},
+		// X轴分类标题
+		xAxis:{categories:['苹果','香蕉','橙子']},
+		// Y轴标题
+		yAxis:{
+			title:{text:'水果个数'}
+		},
+		// 图表展示的数据
+		series:[
+			// 第1个数据系列
+			{
+				name:'小明',
+				data:[1,2,4]
+			},
+			// 第2个数据系列
+			{
+				name:'小红',
+				data:[5,7,3]
+			}
+		],
+	};
+
+	// 创建图表（把图表展示到id是container的div元素中）
+	// 语法 highcharts.chart(容器id,图表配置参数)
+	var chart=Highcharts.chart("container", options);
+</script>
